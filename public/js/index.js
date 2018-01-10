@@ -18,7 +18,7 @@ $(document).ready(function(){
 
          $("#cond").html(weather.weather[0].main);
 
-         $("#temp").html(Math.round(weather.main.temp));
+         $("#temp").html(Math.round(weather.main.temp) + " °C");
 
          var Conditions = weather.weather[0].id;
          var K = weather.main.temp;
@@ -33,24 +33,24 @@ $(document).ready(function(){
 
          $("#btn").on("click",function(){
             if (trueFalse == true){
-              $("#temp").html(Math.round(fTemp));
+              $("#temp").html(Math.round(fTemp) + " °F");
                 trueFalse = false;
             }
-           else {$("#temp").html(Math.round(cTemp));
+           else {$("#temp").html(Math.round(cTemp) + " °C");
            trueFalse = true;};
 
         });
        if ((600 > Conditions) && (Conditions > 199)){
-             $("#pic").attr("src", "http://demo.sc.chinaz.com/Files/pic/icons/6256/k12.png")
+             $("#pic").attr("src", "/js/images/rain.png")
            }
          else if ((800 > Conditions) && (Conditions > 599)){
-           $("#pic").attr("src", "https://d30y9cdsu7xlg0.cloudfront.net/png/33414-200.png")
+           $("#pic").attr("src", "/js/images/snow.png")
          }
          else if (Conditions > 800){
-           $("#pic").attr("src", "http://iconshow.me/media/images/ui/ios7-icons/png/256/cloudy-outline.png")
+           $("#pic").attr("src", "/js/images/cloudy.png")
          }
          else if (Conditions == 800){
-           $("#pic").attr("src", "http://www.myforecast.com/img/1.png")
+           $("#pic").attr("src", "/js/images/sun.nypng")
          };
      });
   });
